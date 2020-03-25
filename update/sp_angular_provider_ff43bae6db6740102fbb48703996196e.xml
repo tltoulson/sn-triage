@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_angular_provider">
+    <sp_angular_provider action="INSERT_OR_UPDATE">
+        <name>DecisionAssistantStore</name>
+        <script><![CDATA[function(DecisionAssistantQueryService, $q) {
+	var state = {
+		'questionaire': null,
+    'questions': [],
+    'responses': [],
+    'characteristics': [],
+    'results': [],
+		'resultRules': [],
+    'history': []
+	};
+	
+	function _initialize(question) {		
+		state.history.push({
+			'event': 'QuestionAsked',
+			'collection': 'questions',
+			'sys_id': question.sys_id.value
+		});
+	}
+	
+	function _findById(array, id) {
+		return _.find(array, function(obj) {
+			return obj.sys_id.value == id;
+		});
+	}
+	
+	function _findLastEventOfType(types) {
+		return _.findLast(state.history, function(evt) {
+			return types.indexOf(evt.event) != -1;
+		});
+	}
+	
+	function _getSelectedCharacteristics() {
+		var selectedCharacteristics = [];
+		
+		_.forEach(state.history, function(evt) {
+			if (evt.event == 'ResponseSelected') {
+				_.forEach(evt.characteristics.split(','), function(characteristic) {
+					selectedCharacteristics.push(characteristic);
+				});
+			}
+		});
+		
+		return _.uniq(selectedCharacteristics);
+	}
+	
+	function _matchesRuleCharacteristics(rule) {
+		var ruleCharacteristics = rule.match_characteristics.value.split(',');
+		var selectedCharacteristics = _getSelectedCharacteristics();
+		
+		var failedRuleIx = _.findIndex(ruleCharacteristics, function(characteristic) {
+			return (_.indexOf(selectedCharacteristics, characteristic) == -1);
+		});
+		
+		return (failedRuleIx == -1);
+	}
+	
+	function _calculateResult() {
+		var winningRule = _.find(state.resultRules, _matchesRuleCharacteristics);
+		
+		state.history.push({
+			'event': 'ResultCalculated',
+			'collection': 'results',
+			'sys_id': winningRule.result.value
+		});
+	}
+	
+	function selectResponse(response) {
+		if (state.history[state.history.length - 1].event == 'ResponseSelected') {
+			state.history.pop();
+		}
+		
+		state.history.push({
+			'event': 'ResponseSelected',
+			'collection': 'responses',
+			'sys_id': response.sys_id.value,
+			'characteristics': response.set_characteristics.value || ''
+		});
+	}
+	
+	function next() {
+		var lastSelected = _findLastEventOfType('ResponseSelected');
+		var response = _findById(state.responses, lastSelected.sys_id);
+		
+		if (response.next_step.value == 'Proceed to Question') {
+			state.history.push({
+				'event': 'QuestionAsked',
+				'collection': 'questions',
+				'sys_id': response.next_question.value
+			});
+		} else if (response.next_step.value == 'Show Result') {
+			_calculateResult();
+		}
+	}
+	
+	function previous() {
+		state.history = _.dropRightWhile(state.history, function(evt) {
+			return (evt.event != 'QuestionAsked');
+		});
+		
+		state.history.pop();
+	}
+	
+	function startOver() {
+		state.history = state.history.slice(0,1);
+	}
+	
+	function findObjectByLastEvent(eventName) {
+		var event = _findLastEventOfType(eventName);
+		if (state[event.collection]) {
+			return _findById(state[event.collection], event.sys_id);
+		}
+	}
+	
+	function loadQuestionnaire(id) {
+		if (state.questionnaire && state.questionnaire.sys_id.value == id) {
+				$q.resolve(state.history[0]);
+		}
+				
+		return DecisionAssistantQueryService.loadQuestionnaire(id)
+			.then(function(result) {
+				state = result;
+				state.history = [];
+			
+				var firstQuestion = state.questions[0];
+			
+				if (!firstQuestion || state.questionnaire.active.value == false) {
+					state.history.push({
+						'event': 'ERROR',
+						'title': 'Questionnaire Not Found',
+						'msg': 'The questionnaire id provided in the URL could not be located'
+					});
+					return;
+				}
+			
+				_initialize(firstQuestion);
+			
+				return firstQuestion;
+			});
+	}
+	
+	function getState() {
+		return state;
+	}
+	
+	return {
+		'loadQuestionnaire': loadQuestionnaire,
+		'getState': getState,
+		'findObjectByLastEvent': findObjectByLastEvent,
+		'selectResponse': selectResponse,
+		'next': next,
+		'previous': previous,
+		'startOver': startOver
+	};
+}]]></script>
+        <sys_class_name>sp_angular_provider</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-17 18:06:42</sys_created_on>
+        <sys_id>ff43bae6db6740102fbb48703996196e</sys_id>
+        <sys_mod_count>93</sys_mod_count>
+        <sys_name>DecisionAssistantStore</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sp_angular_provider_ff43bae6db6740102fbb48703996196e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-19 17:08:05</sys_updated_on>
+        <type>factory</type>
+    </sp_angular_provider>
+</record_update>

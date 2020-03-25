@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload</directory>
+        <documentkey>f2c1f90adb6b40102fbb487039961940</documentkey>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="x_0505_triage_triage_question"&gt;
+    &lt;x_0505_triage_triage_question action="INSERT_OR_UPDATE"&gt;
+        &lt;description&gt;&lt;![CDATA[&lt;p&gt;Symptoms of COVID-19 include:&lt;/p&gt;
+&lt;ul style="list-style-position: inside;"&gt;&lt;li&gt;Fever&lt;/li&gt;&lt;li&gt;Coughing&lt;/li&gt;&lt;li&gt;Shortness of Breath&lt;/li&gt;&lt;li&gt;Flu-Like Symptoms&lt;/li&gt;&lt;/ul&gt;]]&gt;&lt;/description&gt;
+        &lt;number&gt;TRIQ0001021&lt;/number&gt;
+        &lt;order&gt;1000&lt;/order&gt;
+        &lt;questionaire display_value="I may have COVID-19, what should I do?"&gt;23280102dbe740102fbb4870399619c2&lt;/questionaire&gt;
+        &lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2020-03-16 00:04:24&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;f2c1f90adb6b40102fbb487039961940&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;3&lt;/sys_mod_count&gt;
+        &lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2020-03-16 00:15:35&lt;/sys_updated_on&gt;
+        &lt;title&gt;Did the person display symptoms while you were in contact with them?&lt;/title&gt;
+    &lt;/x_0505_triage_triage_question&gt;
+&lt;/record_update&gt;
+</payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-19 21:29:39</sys_created_on>
+        <sys_id>8005b197db2704102fbb4870399619ed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Did the person display symptoms while you were in contact with them?</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sys_metadata_link_8005b197db2704102fbb4870399619ed</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-19 21:29:39</sys_updated_on>
+        <tablename>x_0505_triage_triage_question</tablename>
+    </sys_metadata_link>
+</record_update>

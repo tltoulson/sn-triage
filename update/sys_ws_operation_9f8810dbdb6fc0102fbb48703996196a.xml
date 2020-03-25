@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ws_operation">
+    <sys_ws_operation action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <consumes>application/json,application/xml,text/xml</consumes>
+        <consumes_customized>false</consumes_customized>
+        <default_operation_uri/>
+        <enforce_acl>c1685c9bdb6fc0102fbb487039961905</enforce_acl>
+        <http_method>GET</http_method>
+        <name>getQuestionnaire</name>
+        <operation_script><![CDATA[(function process(/*RESTAPIRequest*/ request, /*RESTAPIResponse*/ response) {
+
+    function getObjectForRecord(gr) {
+		var result = {};
+		
+		for (var i in gr) {
+			result[i] = {
+				'value': gr.getValue(i) || '',
+				'display_value': gr.getDisplayValue(i) || ''
+			};
+		}
+		
+		result.type = {
+			'value': gr.getTableName(),
+			'display_value': gr.getClassDisplayValue()
+		};
+		
+		if (gr.getTableName() == 'x_0505_triage_triage_characteristic') {
+			gs.error('Found one');
+		}
+		
+		return result;
+	}
+	
+	function getArrayFromGlideRecord(table, query, limit) {
+		var result = [];
+		var gr = new GlideRecord(table);
+		gr.addEncodedQuery(query);
+		
+		if (limit) {
+			gr.setLimit(limit);
+		}
+		
+		gr.query();
+		
+		while (gr.next()) {
+			result.push(getObjectForRecord(gr));
+		}
+		
+		return result;
+	}
+	
+	var qId = request.queryParams.qId;
+	
+	var questionnaire = getArrayFromGlideRecord('x_0505_triage_triage_questionaire', 
+												'sys_id=' + qId, 1);
+	
+	var questions = getArrayFromGlideRecord('x_0505_triage_triage_question',
+											'questionaire=' + qId + '^ORDERBYorder');
+	
+	var responses = getArrayFromGlideRecord('x_0505_triage_triage_question_response',
+											'response_for.questionaire=' + qId + '^ORDERBYorder');
+	
+	var characteristics = getArrayFromGlideRecord('x_0505_triage_triage_characteristic',
+											'triage_questionnaire=' + qId);
+	
+	var results = getArrayFromGlideRecord('x_0505_triage_triage_result', 
+											'triage_questionaire=' + qId);
+	
+	var resultRules = getArrayFromGlideRecord('x_0505_triage_triage_result_rule',
+											'questionnaire=' + qId + '^ORDERBYorder');
+	
+	return {
+		'questionnaire': questionnaire[0],
+		'questions': questions,
+		'responses': responses,
+		'characteristics': characteristics,
+		'results': results,
+		'resultRules': resultRules
+	};
+
+})(request, response);]]></operation_script>
+        <operation_uri>/api/x_0505_triage/triage/getQuestionnaire</operation_uri>
+        <produces>application/json,application/xml,text/xml</produces>
+        <produces_customized>false</produces_customized>
+        <relative_path>/getQuestionnaire</relative_path>
+        <request_example/>
+        <requires_acl_authorization>false</requires_acl_authorization>
+        <requires_authentication>false</requires_authentication>
+        <requires_snc_internal_role>false</requires_snc_internal_role>
+        <short_description/>
+        <sys_class_name>sys_ws_operation</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-19 15:04:12</sys_created_on>
+        <sys_id>9f8810dbdb6fc0102fbb48703996196a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>getQuestionnaire</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sys_ws_operation_9f8810dbdb6fc0102fbb48703996196a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-19 16:32:26</sys_updated_on>
+        <web_service_definition display_value="Triage">1008d09bdb6fc0102fbb487039961960</web_service_definition>
+        <web_service_version/>
+    </sys_ws_operation>
+</record_update>

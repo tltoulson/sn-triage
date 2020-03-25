@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload</directory>
+        <documentkey>324b55c2db2b40102fbb487039961911</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_0505_triage_triage_characteristic">
+    <x_0505_triage_triage_characteristic action="INSERT_OR_UPDATE">
+        <name>Exposure - High Risk</name>
+        <number>TRIC0001004</number>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-15 22:25:05</sys_created_on>
+        <sys_id>324b55c2db2b40102fbb487039961911</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-18 20:42:46</sys_updated_on>
+        <triage_questionnaire display_value="I may have COVID-19, what should I do?">23280102dbe740102fbb4870399619c2</triage_questionnaire>
+    </x_0505_triage_triage_characteristic>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-19 21:30:01</sys_created_on>
+        <sys_id>a915f197db2704102fbb48703996195c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Exposure - High Risk</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sys_metadata_link_a915f197db2704102fbb48703996195c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-19 21:30:01</sys_updated_on>
+        <tablename>x_0505_triage_triage_characteristic</tablename>
+    </sys_metadata_link>
+</record_update>

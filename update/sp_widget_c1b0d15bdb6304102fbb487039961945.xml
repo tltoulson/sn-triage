@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($sce, $location) {
+  /* widget controller */
+  var c = this;
+	
+	c.data.openQuestionnaire = function(q) {
+		$location.search({
+			'id': 'tda_questionnaire',
+			'questionnaire': q.sys_id.value
+		});
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>$triageRootFontSize: 10px !default;
+$triageBodyFontSize: $font-size-base !default;
+$triageGridWidth: 32% !default;
+$triageHeaderColor: $sp-navbar-divider-color !default; 
+$triageHeaderFontColor: $gray-lighter !default;
+
+h1 {
+  font-size: $triageRootFontSize * 3.6;
+  line-height: 1.25em;
+  margin: 0;
+  padding: $triageRootFontSize * 2;
+  padding-bottom: $triageRootFontSize * 8;
+  color: $triageHeaderFontColor;
+  background-color: $triageHeaderColor;
+}
+
+ul {
+	list-style-type: none;
+  font-size: $triageBodyFontSize;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  margin-top: calc(-2% + ($triageRootFontSize * -6));
+  padding: 0 2%;
+}
+
+.questionnaire-card {
+  position: relative;
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  background-color: #fff;
+  margin-top: 2%;
+  
+  @media only screen and (min-width: 900px) {
+    width: $triageGridWidth;  
+  }
+}
+
+.questionnaire-card a {
+	color: $text-color; 
+  display: block;
+  padding: $triageRootFontSize * 4;
+}
+
+.questionnaire-card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.questionnaire-card h3 {
+	font-size: $triageRootFontSize * 2.8;
+  line-height: 1.25em;
+  margin-top: 0;
+}
+
+.questionnaire-card .clickForHelp {
+	position: absolute;
+  bottom: $triageRootFontSize * 1.5;
+  right: $triageRootFontSize * 3;
+}
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Triage Questionnaire List</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	
+	function getQuestionnaires() {
+		var results = [];
+		var gr = new GlideRecord('x_0505_triage_triage_questionaire');
+		gr.addQuery('active', true);
+		gr.query();
+		
+		while (gr.next()) {
+			results.push($sp.getFieldsObject(gr,'sys_id,title,description'))
+		}
+		
+		return results;
+	}
+	
+	data.questionnaires = getQuestionnaires();
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-19 18:52:18</sys_created_on>
+        <sys_id>c1b0d15bdb6304102fbb487039961945</sys_id>
+        <sys_mod_count>71</sys_mod_count>
+        <sys_name>Triage Questionnaire List</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sp_widget_c1b0d15bdb6304102fbb487039961945</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-24 21:55:15</sys_updated_on>
+        <template><![CDATA[<div class="triageRoot">
+  <h1>${How can we help?}</h1>
+  
+  <ul>
+    <li class="questionnaire-card" ng-repeat="q in c.data.questionnaires">
+      <a href ng-click="c.data.openQuestionnaire(q)">
+        <h3>{{ q.title.value }}</h3>
+
+        <div ng-bind-html="q.description.value">
+
+        </div>
+        
+        <div class="text-right text-primary clickForHelp">
+          ${Click for Help with this question}
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>]]></template>
+    </sp_widget>
+</record_update>

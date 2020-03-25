@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function(DecisionAssistantStore, $sce, $scope, $location) {
+  /* widget controller */
+  var c = this;
+	
+	c.store = DecisionAssistantStore;
+	
+	function getQuestionNumber() {
+		var i = 0;
+		
+		c.store.getState().history.forEach(function(evt) {
+			if (evt.event == 'QuestionAsked') {
+				i++;
+			}
+		});
+		
+		return i;
+	}
+	
+	function updateViewState() {
+		var state = c.store.getState();
+		var lastEvent = state.history[state.history.length - 1];
+		c.data.isLoading = (c.store.getState().history.length == 0);
+		
+		if (lastEvent.event == 'ERROR') {
+			c.data.error = lastEvent;
+			console.log(c.data.error);
+			return;
+		}
+		
+		c.data.pageTitle = state.questionnaire.title.value;
+		c.data.question = c.store.findObjectByLastEvent('QuestionAsked,ResultCalculated');
+		c.data.questionNumber = getQuestionNumber();
+		c.data.responses = _.filter(state.responses, function(response) {
+			return response.response_for.value == c.data.question.sys_id.value;
+		});
+		
+		if (state.history[state.history.length - 1].event == 'ResponseSelected') {
+			c.data.selectedResponse = c.store.findObjectByLastEvent('ResponseSelected');
+		}
+		else {
+			c.data.selectedResponse = null;
+		}
+		
+		c.data.history = state.history;
+		
+		if (c.data.question.type.value == 'x_0505_triage_triage_result') {
+			c.server.get({
+				'action': 'QuestionnaireCompleted',
+				'questionnaire': $location.search().questionnaire,
+				'result': c.data.question.title.value
+			});
+			
+			$location.search({
+				'id': 'tda_result',
+				'questionnaire': $location.search().questionnaire,
+				'result': c.data.question.sys_id.value
+			});
+		}
+	}
+	
+	c.store.loadQuestionnaire($location.search().questionnaire)
+		.then(function() {
+			c.server.get({ 
+				'action': 'QuestionnaireViewed',
+				'questionnaire': $location.search().questionnaire
+			});
+		
+			updateViewState();
+		});
+	
+	c.selectResponse = function(response) {
+		c.store.selectResponse(response);
+		updateViewState();
+	}
+	
+	c.next = function() {
+		c.store.next();
+		updateViewState();
+	}
+	
+	c.previous = function() {
+		c.store.previous();
+		updateViewState();
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>$triageRootFontSize: 10px !default;
+$triageBodyFontSize: $font-size-base !default;
+$triageHeaderColor: $sp-navbar-divider-color !default; 
+$triageHeaderFontColor: $gray-lighter !default;
+$triageResponseHoverColor: $triageHeaderColor !default;
+$triageResponseHoverFontColor: $triageHeaderFontColor !default;
+
+h1 {
+  font-size: $triageRootFontSize * 3.6;
+  line-height: 1.25em;
+  margin: 0;
+  padding: $triageRootFontSize * 2;
+  padding-bottom: $triageRootFontSize * 8;
+  color: $triageHeaderFontColor;
+  background-color: $triageHeaderColor;
+}
+
+.question-card {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+  border-radius: 2px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  margin-top: $triageRootFontSize * -6;
+  background-color: #fff;
+  padding: $triageRootFontSize * 4;
+}
+
+.question-card h3 {
+	font-size: $triageRootFontSize * 2.8; 
+  line-height: 1.25em;
+}
+
+.question-card ul.responses {
+	list-style-type: none;
+  padding: 0;
+  padding-top: $triageRootFontSize * 1;
+}
+
+.question-card ul.responses li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: $triageRootFontSize * 2.4;
+  cursor: pointer;
+  margin-left: $triageRootFontSize * -2;
+  margin-right: $triageRootFontSize * -2;
+  margin-bottom: 0;
+  margin-top: $triageRootFontSize;
+  padding-top: $triageRootFontSize * .5;
+  padding-bottom: $triageRootFontSize * .5;
+  padding-left: $triageRootFontSize * 2;
+  padding-right: $triageRootFontSize * 2;
+  border-radius: 2px;
+}
+
+.question-card ul.responses li .optionIcon {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $triageRootFontSize * 3;
+  height: $triageRootFontSize * 3;
+  border-radius: 50%;
+  border: thin solid;
+  margin-right: $triageRootFontSize * 2;
+}
+
+.question-card ul.responses li:hover, .question-card ul li.selected {
+  background-color: $triageResponseHoverColor;
+	color: $triageResponseHoverFontColor;
+}
+
+.navigation-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	padding-top: $triageRootFontSize * 2; 
+}
+
+.navigation-buttons &gt; div {
+	padding: $triageRootFontSize;
+  width: 100%;
+}
+
+.navigation-buttons .btn {
+	border-radius: 2px; 
+  width: 100%;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>decision_assistant</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Triage Decision Assistant</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	if (input && input.action == 'QuestionnaireViewed') {
+		$sp.logStat('Triage Questionnaire Viewed', 'x_0505_triage_triage_questionaire', input.questionnaire);
+	}
+	else if (input && input.action == 'QuestionnaireCompleted') {
+		$sp.logStat('Triage Questionnaire Completed', 'x_0505_triage_triage_questionaire', input.questionnaire, input.result);
+	}
+	
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-17 17:48:58</sys_created_on>
+        <sys_id>c85f6ae6db2740102fbb487039961954</sys_id>
+        <sys_mod_count>197</sys_mod_count>
+        <sys_name>Triage Decision Assistant</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sp_widget_c85f6ae6db2740102fbb487039961954</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-24 22:06:06</sys_updated_on>
+        <template><![CDATA[<div ng-if="c.data.isLoading == false">
+  <h1>{{ c.data.pageTitle }}</h1>
+  
+  <div class="question-card" ng-if="c.data.error">
+    <div class="text-muted">${ Error }</div>
+      <h3>{{ c.data.error.title }}</h3>
+    <div ng-if="c.data.error.msg" ng-bind-html="c.data.error.msg">
+    </div>
+  </div>
+  
+  <div class="question-card" ng-if="!c.data.error && c.data.question.type.value == 'x_0505_triage_triage_question'">
+    <div class="text-muted">${ Question } #{{ c.data.questionNumber }}</div>
+    <h3>{{ c.data.question.title.value }}</h3>
+    <div ng-if="c.data.question.description.value" ng-bind-html="c.data.question.description.value">
+    </div>
+    
+    <div class="text-muted">
+      ${Choose an answer}:
+    </div>
+    <ul class="responses" role="listbox">
+      <li ng-repeat="response in c.data.responses" ng-class="{ 'selected': c.data.selectedResponse == response }" ng-click="c.selectResponse(response)" role="option">
+      	<span class="optionIcon" ng-class="{ 'fa': c.data.selectedResponse == response, 'fa-check': c.data.selectedResponse == response }"></span>
+        <span>{{ response.title.value }}</span>
+      </li>
+    </ul>
+    
+    <div class="navigation-buttons">
+      <div>
+        <a href class="btn btn-default btn-lg" ng-if="c.data.questionNumber != 1" ng-click="c.previous()" role="button">${Back}</a>
+      </div>
+      <div>
+        <a href class="btn btn-primary btn-lg" ng-disabled="!c.data.selectedResponse" ng-click="c.next()" role="button">${Next}</a>
+    	</div>
+		</div>
+  </div>
+
+</div>]]></template>
+    </sp_widget>
+</record_update>

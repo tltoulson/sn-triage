@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="Triage Result" max_length="40" name="x_0505_triage_triage_result" type="collection">
+        <element label="Description" max_length="8000" name="description" type="translated_html"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Order" max_length="40" name="order" type="integer"/>
+        <element display="true" label="Title" max_length="255" name="title" type="string"/>
+        <element label="Triage Questionaire" max_length="32" name="triage_questionaire" reference="x_0505_triage_triage_questionaire" reference_cascade_rule="delete" type="reference"/>
+        <index name="index">
+            <element name="triage_questionaire"/>
+        </index>
+    </element>
+</database>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_page">
+    <sp_page action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <css>body .padding-top {&#13;
+ padding-top: 0; &#13;
+}</css>
+        <draft>false</draft>
+        <dynamic_title_structure/>
+        <id>tda_result</id>
+        <internal>false</internal>
+        <public>true</public>
+        <roles/>
+        <short_description/>
+        <sys_class_name>sp_page</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-19 15:58:08</sys_created_on>
+        <sys_id>fa09e09fdbafc0102fbb48703996194d</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>tda_result</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sp_page_fa09e09fdbafc0102fbb48703996194d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-19 22:08:27</sys_updated_on>
+        <title>Decision Assistant Result</title>
+    </sp_page>
+    <sys_translated_text action="delete_multiple" query="documentkey=fa09e09fdbafc0102fbb48703996194d"/>
+</record_update>

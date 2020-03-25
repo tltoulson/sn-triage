@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE">
+        <sp_angular_provider display_value="DecisionAssistantQueryService">5ab2ba2edb6740102fbb487039961996</sp_angular_provider>
+        <sp_widget display_value="Triage Result">e0872c1fdbafc0102fbb487039961975</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-19 15:54:24</sys_created_on>
+        <sys_id>9d48281fdbafc0102fbb4870399619de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DecisionAssistantQueryService.Triage Result</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_9d48281fdbafc0102fbb4870399619de</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-19 15:54:24</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+</record_update>

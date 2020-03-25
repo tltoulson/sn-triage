@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_restricted_caller_access">
+    <sys_restricted_caller_access action="INSERT_OR_UPDATE">
+        <operation>read</operation>
+        <source>6d2ce10187502100deddb882a2e3ec6b</source>
+        <source_scope display_value="Global">global</source_scope>
+        <source_table>sys_ui_page</source_table>
+        <source_type>15</source_type>
+        <status>2</status>
+        <sys_class_name>sys_restricted_caller_access</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-19 21:29:26</sys_created_on>
+        <sys_id>4df4bd57db2704102fbb4870399619ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>global</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sys_restricted_caller_access_4df4bd57db2704102fbb4870399619ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-19 21:29:26</sys_updated_on>
+        <target name="x_0505_triage_triage_questionaire" target_table="sys_db_object">316c08c2dbe340102fbb4870399619ec</target>
+        <target_scope display_value="Triage">9de3c40adba340102fbb487039961988</target_scope>
+        <target_table>sys_db_object</target_table>
+        <target_type>1</target_type>
+    </sys_restricted_caller_access>
+</record_update>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>unload</directory>
+        <documentkey>46aed54adb2b40102fbb4870399619b6</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_0505_triage_triage_question_response">
+    <x_0505_triage_triage_question_response action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <next_question display_value="Can the cough be attributed to smoking or some condition other than COVID-19?">ccd97d02dbab40102fbb487039961969</next_question>
+        <next_step>Proceed to Question</next_step>
+        <number>TRIQR0001007</number>
+        <order>100</order>
+        <response_for display_value="Do you currently have a cough?">6c9e554adb2b40102fbb487039961993</response_for>
+        <set_characteristics/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-15 23:20:51</sys_created_on>
+        <sys_id>46aed54adb2b40102fbb4870399619b6</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-18 02:25:32</sys_updated_on>
+        <title>Yes</title>
+    </x_0505_triage_triage_question_response>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-19 21:29:52</sys_created_on>
+        <sys_id>db053597db2704102fbb487039961910</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Yes</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sys_metadata_link_db053597db2704102fbb487039961910</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-19 21:29:52</sys_updated_on>
+        <tablename>x_0505_triage_triage_question_response</tablename>
+    </sys_metadata_link>
+</record_update>
