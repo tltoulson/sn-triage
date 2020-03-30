@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Triage Result Rule" max_length="40" name="x_0505_triage_triage_result_rule" type="collection">
+    <element attributes="update_synch=true" extends="sys_metadata" label="Triage Result Rule" max_length="40" name="x_0505_triage_triage_result_rule" type="collection">
         <element label="Match Characteristics" max_length="4000" name="match_characteristics" reference="x_0505_triage_triage_characteristic" reference_qual="javascript:'triage_questionnaire=' + current.questionnaire.toString();" type="glide_list" use_reference_qualifier="advanced"/>
         <element label="Order" max_length="40" name="order" type="integer"/>
         <element label="Questionnaire" max_length="32" name="questionnaire" reference="x_0505_triage_triage_questionaire" reference_cascade_rule="delete" type="reference"/>

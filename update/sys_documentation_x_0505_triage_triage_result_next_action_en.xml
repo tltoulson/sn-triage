@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="next_action" label="Next Action" language="en" table="x_0505_triage_triage_result">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>next_action</element>
+            <help/>
+            <hint/>
+            <label>Next Action</label>
+            <language>en</language>
+            <name>x_0505_triage_triage_result</name>
+            <plural>Next Actions</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-25 15:15:51</sys_created_on>
+            <sys_id>cbf8d341db7780102fbb4870399619fe</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Next Action</sys_name>
+            <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+            <sys_update_name>sys_documentation_x_0505_triage_triage_result_next_action_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-25 15:15:51</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

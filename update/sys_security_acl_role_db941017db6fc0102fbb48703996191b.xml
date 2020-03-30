@@ -4,16 +4,16 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-03-19 14:28:38</sys_created_on>
         <sys_id>db941017db6fc0102fbb48703996191b</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>x_0505_triage_triage_characteristic.public</sys_name>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>x_0505_triage_triage_characteristic.snc_internal</sys_name>
         <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
         <sys_policy/>
         <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
         <sys_security_acl display_value="x_0505_triage_triage_characteristic">960a5106db2b40102fbb4870399619eb</sys_security_acl>
         <sys_update_name>sys_security_acl_role_db941017db6fc0102fbb48703996191b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-03-19 14:28:38</sys_updated_on>
-        <sys_user_role display_value="public" name="public">b0593b350a0a0aa7001d689e4542dc28</sys_user_role>
+        <sys_updated_on>2020-03-30 15:39:49</sys_updated_on>
+        <sys_user_role display_value="snc_internal" name="snc_internal">7fcaa702933002009c8579b4f47ffbde</sys_user_role>
         <transaction_id/>
     </sys_security_acl_role>
 </record_update>

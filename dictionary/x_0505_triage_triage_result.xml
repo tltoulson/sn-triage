@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Triage Result" max_length="40" name="x_0505_triage_triage_result" type="collection">
+    <element attributes="update_synch=true" extends="sys_metadata" label="Triage Result" max_length="40" name="x_0505_triage_triage_result" type="collection">
         <element label="Description" max_length="8000" name="description" type="translated_html"/>
+        <element attributes="edge_encryption_enabled=true" label="Next Action" max_length="1024" name="next_action" type="url"/>
+        <element attributes="edge_encryption_enabled=true" label="Next Action Text" max_length="40" name="next_action_text" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Order" max_length="40" name="order" type="integer"/>
         <element display="true" label="Title" max_length="255" name="title" type="string"/>

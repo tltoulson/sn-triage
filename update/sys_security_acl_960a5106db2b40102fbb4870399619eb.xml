@@ -12,14 +12,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-03-15 22:19:26</sys_created_on>
         <sys_id>960a5106db2b40102fbb4870399619eb</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>3</sys_mod_count>
         <sys_name>x_0505_triage_triage_characteristic</sys_name>
         <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
         <sys_policy/>
         <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
         <sys_update_name>sys_security_acl_960a5106db2b40102fbb4870399619eb</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-03-15 22:19:26</sys_updated_on>
+        <sys_updated_on>2020-03-30 15:36:06</sys_updated_on>
         <type display_value="record">record</type>
     </sys_security_acl>
 </record_update>

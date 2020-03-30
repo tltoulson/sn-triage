@@ -17,14 +17,14 @@
         <override_menu_roles>false</override_menu_roles>
         <query>/$pa_dashboard.do?sysparm_dashboard=2f1ab51fdb2704102fbb487039961951&amp;sysparm_tab=1e4a7ddbdb2704102fbb487039961903&amp;sysparm_cancelable=true&amp;sysparm_editable=false&amp;sysparm_active_panel=false</query>
         <report/>
-        <roles>x_0505_triage.admin</roles>
+        <roles>x_0505_triage.admin,x_0505_triage.dashboard_viewer</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-03-19 22:23:50</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>1f418a97db6704102fbb48703996191e</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Dashboard</sys_name>
         <sys_overrides/>
         <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
@@ -32,7 +32,7 @@
         <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
         <sys_update_name>sys_app_module_1f418a97db6704102fbb48703996191e</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-03-19 22:24:01</sys_updated_on>
+        <sys_updated_on>2020-03-30 15:56:55</sys_updated_on>
         <timeline_page/>
         <title>Dashboard</title>
         <uncancelable>false</uncancelable>

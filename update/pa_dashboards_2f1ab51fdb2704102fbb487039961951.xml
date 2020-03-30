@@ -12,7 +12,7 @@
         <no_tabs>false</no_tabs>
         <order>1000</order>
         <owner display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</owner>
-        <restrict_to_roles>x_0505_triage.admin</restrict_to_roles>
+        <restrict_to_roles>x_0505_triage.admin,x_0505_triage.dashboard_viewer</restrict_to_roles>
         <role_override>true</role_override>
         <roles/>
         <should_migrate_permissions>false</should_migrate_permissions>
@@ -22,7 +22,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>2f1ab51fdb2704102fbb487039961951</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Self-Triage Dashboard</sys_name>
         <sys_overrides/>
         <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
@@ -30,7 +30,7 @@
         <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
         <sys_update_name>pa_dashboards_2f1ab51fdb2704102fbb487039961951</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-03-19 21:52:44</sys_updated_on>
+        <sys_updated_on>2020-03-30 15:58:17</sys_updated_on>
         <users/>
         <visible_to>2</visible_to>
     </pa_dashboards>

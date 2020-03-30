@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_embedded_help_role">
+    <sys_embedded_help_role action="INSERT_OR_UPDATE">
+        <order>1000</order>
+        <role display_value="x_0505_triage.dashboard_viewer" name="x_0505_triage.dashboard_viewer">f3025db6dbbb80102fbb487039961909</role>
+        <sys_class_name>sys_embedded_help_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-30 15:56:22</sys_created_on>
+        <sys_id>99329576dbbb80102fbb487039961941</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>f3025db6dbbb80102fbb487039961909</sys_name>
+        <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
+        <sys_update_name>sys_embedded_help_role_99329576dbbb80102fbb487039961941</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-30 15:56:22</sys_updated_on>
+    </sys_embedded_help_role>
+</record_update>

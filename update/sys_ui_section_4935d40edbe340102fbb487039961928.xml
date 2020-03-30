@@ -4,13 +4,13 @@
             <element>number</element>
             <position>0</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-03-15 21:00:34</sys_created_on>
-            <sys_id>c7f74d02dbe740102fbb487039961973</sys_id>
+            <sys_created_on>2020-03-30 15:42:56</sys_created_on>
+            <sys_id>242fc1f2dbbb80102fbb48703996190a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0505_triage_triage_questionaire" sys_domain="global" view="Default view">4935d40edbe340102fbb487039961928</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-03-15 21:00:34</sys_updated_on>
+            <sys_updated_on>2020-03-30 15:42:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
@@ -18,13 +18,13 @@
             <element>.split</element>
             <position>1</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-03-15 21:00:34</sys_created_on>
-            <sys_id>4bf74d02dbe740102fbb487039961973</sys_id>
+            <sys_created_on>2020-03-30 15:42:56</sys_created_on>
+            <sys_id>ac2fc1f2dbbb80102fbb48703996190a</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0505_triage_triage_questionaire" sys_domain="global" view="Default view">4935d40edbe340102fbb487039961928</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-03-15 21:00:34</sys_updated_on>
+            <sys_updated_on>2020-03-30 15:42:56</sys_updated_on>
             <sys_user/>
             <type>.split</type>
         </sys_ui_element>
@@ -32,55 +32,69 @@
             <element>active</element>
             <position>2</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-03-15 21:00:34</sys_created_on>
-            <sys_id>cbf74d02dbe740102fbb487039961973</sys_id>
+            <sys_created_on>2020-03-30 15:42:56</sys_created_on>
+            <sys_id>242fc1f2dbbb80102fbb48703996190b</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0505_triage_triage_questionaire" sys_domain="global" view="Default view">4935d40edbe340102fbb487039961928</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-03-15 21:00:34</sys_updated_on>
+            <sys_updated_on>2020-03-30 15:42:56</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>public</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2020-03-30 15:42:56</sys_created_on>
+            <sys_id>a82fc1f2dbbb80102fbb48703996190b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_0505_triage_triage_questionaire" sys_domain="global" view="Default view">4935d40edbe340102fbb487039961928</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2020-03-30 15:42:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>.end_split</element>
-            <position>3</position>
+            <position>4</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-03-15 21:00:34</sys_created_on>
-            <sys_id>4ff74d02dbe740102fbb487039961973</sys_id>
+            <sys_created_on>2020-03-30 15:42:56</sys_created_on>
+            <sys_id>202fc1f2dbbb80102fbb48703996190c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0505_triage_triage_questionaire" sys_domain="global" view="Default view">4935d40edbe340102fbb487039961928</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-03-15 21:00:34</sys_updated_on>
+            <sys_updated_on>2020-03-30 15:42:56</sys_updated_on>
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>title</element>
-            <position>4</position>
+            <position>5</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-03-15 21:00:34</sys_created_on>
-            <sys_id>cff74d02dbe740102fbb487039961973</sys_id>
+            <sys_created_on>2020-03-30 15:42:56</sys_created_on>
+            <sys_id>a42fc1f2dbbb80102fbb48703996190c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0505_triage_triage_questionaire" sys_domain="global" view="Default view">4935d40edbe340102fbb487039961928</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-03-15 21:00:34</sys_updated_on>
+            <sys_updated_on>2020-03-30 15:42:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>description</element>
-            <position>5</position>
+            <position>6</position>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2020-03-15 21:00:34</sys_created_on>
-            <sys_id>43f74d02dbe740102fbb487039961974</sys_id>
+            <sys_created_on>2020-03-30 15:42:56</sys_created_on>
+            <sys_id>2c2fc1f2dbbb80102fbb48703996190c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="NULL" display_value="" name="x_0505_triage_triage_questionaire" sys_domain="global" view="Default view">4935d40edbe340102fbb487039961928</sys_ui_section>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2020-03-15 21:00:34</sys_updated_on>
+            <sys_updated_on>2020-03-30 15:42:56</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>

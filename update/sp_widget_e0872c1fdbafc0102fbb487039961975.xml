@@ -29,6 +29,14 @@
 			'questionnaire': qId
 		});
 	}
+	
+	c.next = function(result) {
+		c.server.get({
+			'action': 'NextActionClicked',
+			'result': result.sys_id.value,
+			'action_text': result.title.value
+		});
+	}
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>$triageRootFontSize: 10px !default;
@@ -140,6 +148,9 @@ h1 {
 		$sp.logStat('Triage Result Viewed', 'x_0505_triage_triage_questionaire', input.questionnaire, input.result);
 	}
 	
+	if (input && input.action == 'NextActionClicked') {
+		$sp.logStat('Triage Next Action Clicked', 'x_0505_triage_triage_result', input.result, input.action_text);
+	}
 	
 })();]]></script>
         <servicenow>false</servicenow>
@@ -147,14 +158,14 @@ h1 {
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-03-19 15:53:53</sys_created_on>
         <sys_id>e0872c1fdbafc0102fbb487039961975</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Triage Result</sys_name>
         <sys_package display_value="Triage" source="x_0505_triage">9de3c40adba340102fbb487039961988</sys_package>
         <sys_policy/>
         <sys_scope display_value="Triage">9de3c40adba340102fbb487039961988</sys_scope>
         <sys_update_name>sp_widget_e0872c1fdbafc0102fbb487039961975</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-03-24 22:10:17</sys_updated_on>
+        <sys_updated_on>2020-03-25 15:49:48</sys_updated_on>
         <template><![CDATA[<div>
   <h1>{{ c.data.pageTitle }}</h1>
   
@@ -167,6 +178,10 @@ h1 {
     <div class="navigation-buttons">
       <div>
         <a href class="btn btn-default btn-lg" ng-click="c.startOver()">${Start Over}</a>
+      </div>
+      
+      <div ng-if="c.data.question.next_action.value && c.data.question.next_action_text.value">
+        <a href class="btn btn-primary btn-lg" ng-click="c.next(c.data.question)" ng-href="{{ c.data.question.next_action.value }}">{{ c.data.question.next_action_text.value }}</a>
       </div>
 		</div>
   </div>
